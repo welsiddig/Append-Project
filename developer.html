@@ -1,80 +1,82 @@
 <html>
-<link rel="icon" href="logo.png">
+
 <link rel="stylesheet" type="text/css" href="developer.css">
-
 <div class="overall">
-<form action="/action_page.php" method="post">
-<ul class="form-style-1">
-    <li><label>Full Name <span class="required">*</span></label><input type="text" name="first" class="field-divided" placeholder="First" />&nbsp;<input type="text" name="last" class="field-divided" placeholder="Last"  /></li>
-    <li>
-        <label>Email <span class="required">*</span></label>
-          <input type="email" name="email" class="field-divided" placeholder="Email" />&nbsp;</li>
-    </li>
-    <li><label> Link to Github or Online Portfolio <span class="required">*</span></label><input type="text" name="field1" class="field-divided" placeholder="Link" />&nbsp;</li>
-    <li>
-        <label>City <span class="required">*</span></label>
-          <input type="text" name="location" class="field-divided" placeholder="Where are you?" />&nbsp;</li>
-    </li>
+<head>
+  <title> localstorage </title>
 
-    <li>
-        <label> Project Details <span class="required">*</span></label>
-        <input type="text" name="field1" class="field-divided" placeholder="What are you creating? What are you looking for in a designer?" />&nbsp;</li>
-    </li>
-<li>
-    <label>Availability</label>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css"/>
-  <div class="pretty p-default p-round p-thick">
-      <input type="checkbox" />
-      <div class="state p-primary-o">
-          <label>Monday</label>
-      </div>
-  </div>
+  <script>
 
-  <!-- success -->
-  <div class="pretty p-default p-round">
-      <input type="checkbox" />
-      <div class="state p-success-o">
-          <label>Tuesday</label>
-      </div>
-  </div>
+  let state = {
 
-  <!-- info -->
-  <div class="pretty p-default p-fill">
-      <input type="checkbox" />
-      <div class="state p-info">
-          <label>Wednesday</label>
-      </div>
-  </div>
+  }
+  function save()   {
+      var fieldValue = document.getElementById('city').value;
+      localStorage.setItem ('text' , fieldValue);
+    }
 
-  <!-- warning -->
-  <div class="pretty p-default p-curve p-thick">
-      <input type="checkbox" />
-      <div class="state p-warning">
-          <label>Thursday</label>
-      </div>
-  </div>
+  function load() {
+    var storedValue = localStorage.getItem('text');
+    if (storedValue) {
+          document.getElementById('city').value = storedValue;
 
-  <!-- danger -->
-  <div class="pretty p-default p-curve p-thick">
-      <input type="checkbox" />
-      <div class="state p-danger-o">
-          <label>Friday</label>
-      </div>
-  </div>
-  <div class="pretty p-default p-round p-thick">
-      <input type="checkbox" />
-      <div class="state p-primary-o">
-          <label>Saturday</label>
-      </div>
-  </div>
-  <div class="pretty p-default p-round">
-      <input type="checkbox" />
-      <div class="state p-success-o">
-          <label>Sunday</label>
-      </div>
-  </div>
+    }
+}
+    function remove() {
+        document.getElementById('city').value = '';
+        localStorage.removeItem('text');
 
-<a href="thankyoudesigner.html"><button type="submit" form="form1" value="Submit">Submit</button>
+    }
 
+    function handleChange(e) {
+      debugger
+      e.preventDefault();
+      console.log("Waad was here")
+      state[type] = e.currentTarget.value()
+    }
+
+    function getShitDone(){
+      document.getElementById('formstuff').elements.forEach((input) => {
+        localStorage.setItem(input.id, input.value)
+      })
+
+
+
+    }
+    function trafficController() {
+      var city = document.getElementById('city').value.toLowerCase()
+      var link;
+      if (city == 'brooklyn') {
+        //code goes here
+
+        // return 'brooklyn.html'
+        link = "brooklyn.html"
+      } else if (city == 'san francisco') {
+        link = "sanfran.html"
+
+      }
+
+      document.getElementById('linker').setAttribute('href', link)
+    }
+
+
+    </script>
+</head>
+
+<body onload="load()">
+  <form id='formstuff'>
+  <ul>
+<li> <input type= "text" id="textfield1" /> <label>Full Name </label> </li>
+<li> <input type="text" id="city" /> <label> City </label> </li>
+<li> <input type="text" id="textfield2" /> <label> Email </label> </li>
+<li> <input type="text" id="textfield3" /> <label> Link to Portfolio </label> </li>
+<li> <input type="text" id="textfield4" /> <label> Project Details </label> </li>
+<input type="text" id="textfield5" /> <label> Days of Availability </label>
+<li> <input type="button" value="save" onclick="save()" /> </li>
+<input type="button" value="remove" onclick="remove()" />
+<a id='linker' href="" onclick="trafficController()">
+<input type="button" value="submit" />
+</ul>
 </form>
+</body>
 </html>
