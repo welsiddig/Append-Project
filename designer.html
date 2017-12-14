@@ -1,6 +1,6 @@
-<html>
-
-<link rel="stylesheet" type="text/css" href="designer.css">
+html>
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" type="text/css" href="developer.css">
 <div class="overall">
 <head>
   <title> localstorage </title>
@@ -65,16 +65,17 @@
 
 <body onload="load()">
   <form id='formstuff'>
-<li> <input type= "text" id="textfield1" /> <label>Full Name </label> </li>
-<li> <input type="text" id="city" /> <label> City </label> </li>
-<li> <input type="text" id="textfield2" /> <label> Email </label> </li>
-<li> <input type="text" id="textfield3" /> <label> Link to Portfolio  </label>  </li>
-<li> <input type="text" id="textfield4" /> <label> Project Details </label> </li>
-<li> <input type="text" id="textfield5" /> <label> Days of Availability </label> </li>
-<input type="button" value="save" onclick="save()" />
-<input type="button" value="remove" onclick="remove()" />
+  <ul>
+<li> <input placeholder="First Last"type= "text" id="textfield1" /> <label>Full Name </label> </li>
+<li> <input placeholder="City" type="text" id="city" /> <label> City </label> </li>
+<li> <input placeholder="Email" type="text" id="textfield2" /> <label> Email </label> </li>
+<li> <input placeholder="Portfolio" type="text" id="textfield3" /> <label> Link to Portfolio </label> </li>
+<li> <input placeholder= "Project Details" type="text" id="textfield4" /> <label> Project Details </label> </li>
+<input placeholder="Availability" type="text" id="textfield5" /> <label> Days of Availability </label>
+
 <a id='linker' href="" onclick="trafficController()">
-<input type="button" value="submit" />
+<input id='input1' class="button" type="button" value="submit" />
+</ul>
 </form>
 </body>
 </html>
