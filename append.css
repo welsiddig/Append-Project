@@ -57,7 +57,7 @@
     font-weight: bold;
     float:center;
     width: 100%
-    font-family: 'monoscope';
+    font-family: 'helvetica';
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     border-radius: 15px;
@@ -163,6 +163,6 @@ body  {
     background-size: cover;
     font-size: 12px;
     width: 100%;
-    font-family: 'monoscope';
+    font-family: 'helvetica';
 
 }
